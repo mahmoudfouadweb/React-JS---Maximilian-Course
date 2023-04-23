@@ -31,7 +31,7 @@ const Login = (props) => {
   //     console.log('CLEANUP');
   //     clearTimeout(identifier);
   //   };
-  // }, [enteredEmail, enteredPassword]);
+  // }, [enteredEmail, enteredPassword]);====
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
