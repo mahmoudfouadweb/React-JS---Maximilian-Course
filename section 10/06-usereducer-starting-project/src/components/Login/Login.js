@@ -50,17 +50,20 @@ const Login = (props) => {
     isValid: null,
   });
 
+  const {isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid} = passwordState;
+  
   useEffect(() => {
     const identifire = setTimeout(() => {
-      setFormIsValid(emailState.isValid && passwordState.isValid);
       console.log("EFFECT RUNNING");
+      setFormIsValid(emailIsValid && passwordIsValid);
     }, 500);
 
     return () => {
-      clearTimeout(identifire);
       console.log("EFFECT CLEANUP");
+      clearTimeout(identifire);
     };
-  }, [emailState.isValid, passwordState.isValid]);
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "USER_INPUT", val: event.target.value });
