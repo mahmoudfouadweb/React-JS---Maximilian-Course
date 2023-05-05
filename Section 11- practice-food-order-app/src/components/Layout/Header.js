@@ -2,8 +2,10 @@ import { Fragment } from "react";
 import mealsImage from "../../assets/meals.jpg";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
+import CartContext from "../../store/cart-context";
 
-const Header = ({onShowCart}) => {
+const Header = ({ onShowCart }) => {
+  
   return (
     <Fragment>
       <header className={classes.header}>
